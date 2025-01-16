@@ -1,49 +1,138 @@
-# Frontend - Proyecto de Prueba
-Este proyecto es un frontend básico en React que incluye un formulario de inicio de sesión. El objetivo es que el candidato pueda realizar pruebas automatizadas y modificar la aplicación según lo requiera la evaluación.
+# **Frontend - Proyecto de Prueba**
 
-## Requisitos previos
-### Antes de comenzar, asegúrate de tener instalados:
+Este proyecto es un frontend básico desarrollado en React. Incluye un formulario de inicio de sesión que interactúa con un backend para autenticar a los usuarios. El objetivo del candidato es realizar pruebas automatizadas y personalizaciones según lo indicado en la evaluación.
 
--- Node.js (versión 16 o superior).
--- npm (incluido con Node.js).
+---
 
-Un editor de código, como Visual Studio Code (opcional, pero recomendado).
+## **Requisitos previos**
+
+Antes de comenzar, asegúrate de tener instalados:
+
+- **Node.js** (versión 16 o superior). Puedes descargarlo desde [Node.js](https://nodejs.org/).
+- **npm** (incluido con Node.js).
+- Un editor de código, como **Visual Studio Code** (opcional, pero recomendado).
+
 Para verificar si están instalados, ejecuta en tu terminal:
 
+```bash
+node -v
+npm -v
+```
 
+---
 
-## Clonar el repositorio
+## **1. Clonar el repositorio**
+
 Clona este repositorio en tu máquina local:
 
--- git clone <URL_DEL_REPOSITORIO>
--- cd frontend
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd frontend
+```
 
-## Instalar dependencias
+---
+
+## **2. Instalar dependencias**
+
 Ejecuta el siguiente comando para instalar todas las dependencias necesarias:
 
+```bash
 npm install
+```
 
-## Configuración
-No es necesario realizar configuraciones adicionales. El proyecto está preparado para conectarse al backend en http://localhost:3001. Asegúrate de que el backend esté en ejecución para probar la funcionalidad completa.
+Esto instalará las bibliotecas necesarias para ejecutar el proyecto React.
+
+---
+
+## **3. Configuración**
+
+El proyecto está preconfigurado para conectarse al backend en `http://localhost:3001`. Asegúrate de que el backend esté en ejecución antes de probar el proyecto.
 
 Si necesitas cambiar la URL del backend:
 
-Abre el archivo src/App.jsx.
-Modifica la URL en el bloque fetch
+1. Abre el archivo `src/App.jsx`.
+2. Modifica la URL en el bloque `fetch`:
 
+   ```javascript
+   const response = await fetch("http://localhost:3001/login", {
+   ```
 
-const response = await fetch("http://localhost:3001/login", {
+---
 
-## Ejecutar el proyecto
+## **4. Ejecutar el proyecto**
+
 Inicia el servidor de desarrollo con:
 
+```bash
 npm run dev
+```
 
-# React + Vite
+Esto iniciará el proyecto y deberías ver un mensaje similar a este:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```
+  VITE v4.0.0  ready in 300ms
 
-Currently, two official plugins are available:
+  ➔  Local:   http://localhost:5173/
+  ➔  Network: use `--host` to expose
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Abre la URL proporcionada (normalmente `http://localhost:5173`) en tu navegador para ver la aplicación.
+
+---
+
+## **5. Funcionalidad del proyecto**
+
+Este proyecto incluye:
+
+- Un formulario de inicio de sesión con los campos:
+  - **Email** (requerido).
+  - **Contraseña** (requerida).
+- **Flujo del login:**
+  - Si las credenciales son correctas, se muestra una página de bienvenida.
+  - Si las credenciales son incorrectas, se muestra un mensaje de error debajo del formulario.
+
+---
+
+## **6. Scripts útiles**
+
+- **Iniciar el servidor en modo desarrollo:**
+  ```bash
+  npm run dev
+  ```
+
+- **Construir la aplicación para producción:**
+  ```bash
+  npm run build
+  ```
+
+- **Previsualizar el proyecto de producción:**
+  ```bash
+  npm run preview
+  ```
+
+---
+
+## **7. Notas adicionales**
+
+1. **Errores comunes:**
+   - Si el frontend no puede conectarse al backend, verifica que:
+     - El backend esté en ejecución.
+     - Las URLs del frontend y backend coincidan.
+
+2. **Configuración de puertos:**
+   - El servidor de desarrollo de React se ejecuta en `http://localhost:5173` por defecto. Si necesitas cambiarlo, consulta la documentación de [Vite](https://vitejs.dev/).
+
+3. **Pruebas:**
+   - Este proyecto está diseñado para que puedas escribir pruebas automatizadas para el formulario de login y sus flujos.
+
+---
+
+## **8. Siguientes pasos**
+
+1. **Verificar el flujo completo:** Asegúrate de que el backend esté en ejecución y prueba los flujos de inicio de sesión exitoso y fallido.
+2. **Escribir pruebas automatizadas:** Diseña y ejecuta pruebas utilizando herramientas como Cypress o Selenium.
+
+Si tienes preguntas o necesitas ayuda, contacta a tu responsable técnico.
+
+---
+

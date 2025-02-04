@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "startAPI": "docker rm -f api | docker run -p 3001:3001 --name api ghcr.io/luisiluck/qaengineer-test-backend/test-backend:latest",
+    "cy:open": "concurrently --kill-others --success all 'npm run startAPI' 'npm run dev' 'cypress open'",
+    "cy:run": "concurrently --kill-others --success all 'npm run startAPI' 'npm run dev' 'cypress run'"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -18,11 +21,14 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "cypress": "^14.0.1",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "testcontainers": "^10.17.2",
     "vite": "^6.0.5"
   }
 }

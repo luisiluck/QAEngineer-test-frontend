@@ -136,3 +136,29 @@ Si tienes preguntas o necesitas ayuda, contacta a tu responsable técnico.
 
 ---
 
+## **9. Pruebas E2E con Cypress**
+
+> #### **NOTA**: Se requiere docker para inicializar la API
+
+#### Para inicializar la GUI interactiva
+```bash
+npm run cy:open
+```
+> Util para implementar pruebas y depurar
+#### Para ejecutar las pruebas por linea de comandos
+```bash
+npm run cy:run
+```
+
+#### Estructura general del Proyecto
+```bash
+cypress
+├── e2e             # contiene las pruebas
+│   └── login.cy.js
+├── fixtures        # contiene los datos para las pruebas
+│   └── login.json
+└── pages           # contiene elementos web agrupados en pages
+    └── login.js
+...    
+cypress.config.js # configuración general de cypress
+```

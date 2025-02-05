@@ -27,5 +27,4 @@ jobs:
         with:
           name: test-report
           path: |
-            cucumber-report.html
             videos/*

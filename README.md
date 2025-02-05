@@ -154,7 +154,8 @@ npm run cy:run
 ```bash
 cypress
 ├── e2e             # contiene las pruebas
-│   └── login.cy.js
+│   └── login.feature
+│   └── login.js
 ├── fixtures        # contiene los datos para las pruebas
 │   └── login.json
 └── pages           # contiene elementos web agrupados en pages
@@ -162,3 +163,6 @@ cypress
 ...    
 cypress.config.js # configuración general de cypress
 ```
+> #### Este proyecto ejecuta las pruebas automáticamente en cada pull request
+> Los resultados de la ejecución pueden verse [aqui](https://github.com/luisiluck/QAEngineer-test-frontend/actions).
+> Para ver reportes y videos de las ejecuciones debe ingresar a alguna ejecución y verá los artefactos generados. 

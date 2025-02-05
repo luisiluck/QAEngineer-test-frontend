@@ -10,6 +10,7 @@ export default defineConfig({
     supportFile: false,
     specPattern: "**/*.feature",
     baseUrl: 'http://localhost:5173',
+    video: true,
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
       on("file:preprocessor", createBundler({
@@ -17,5 +18,5 @@ export default defineConfig({
       }));
       return config;
     }
-  },
+  }
 });

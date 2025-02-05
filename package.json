@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "startAPI": "docker rm -f api ; docker run -d -p 3001:3001 --name api ghcr.io/luisiluck/qaengineer-test-backend/test-backend:latest",
     "startSUT": "npm run startAPI && npm run dev",
-    "cy:open": "concurrently --kill-others --success first 'npm run startSUT' 'cypress open'",
+    "cy:open": "concurrently --kill-others --success first 'npm run startSUT' 'cypress open --e2e'",
     "cy:run": "concurrently --kill-others --success first 'npm run startSUT' 'cypress run'"
   },
   "dependencies": {

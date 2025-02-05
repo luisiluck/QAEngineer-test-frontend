@@ -131,3 +131,7 @@ dist
 
 #mac
 .DS_Store
+
+# reports
+cucumber-report.*
+videos

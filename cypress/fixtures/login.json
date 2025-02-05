@@ -3,7 +3,7 @@
     "scenario": "Login with valid credentials",
     "email": "test@example.com",
     "password": 1234,
-    "message": "Has iniciado sesión Korrectamente."
+    "message": "Has iniciado sesión correctamente."
   },
   {
     "scenario": "Login with invalid email",

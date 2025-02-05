@@ -28,4 +28,4 @@ jobs:
           name: test-report
           path: |
             cucumber-report.html
-            videos/*.mp4
+            cypress/videos/

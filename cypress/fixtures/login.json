@@ -1,0 +1,20 @@
+[
+  {
+    "scenario": "Login with valid credentials",
+    "email": "test@example.com",
+    "password": 1234,
+    "message": "Has iniciado sesión correctamente."
+  },
+  {
+    "scenario": "Login with invalid email",
+    "email": "wrong@mail.com",
+    "password": "wrong",
+    "message": "Invalid credentials"
+  },
+  {
+    "scenario": "Login with invalid password",
+    "email": "test@example.com",
+    "password": "125",
+    "message": "Invalid credentials"
+  }
+]

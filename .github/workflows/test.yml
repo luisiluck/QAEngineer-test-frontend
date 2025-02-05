@@ -21,3 +21,9 @@ jobs:
 
       - name: Run Cypress Tests
         run: npm run cy:run
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: cucumber-report.html

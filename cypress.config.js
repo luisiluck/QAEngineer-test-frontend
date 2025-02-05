@@ -1,8 +1,21 @@
 import { defineConfig } from "cypress";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
+import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
+import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
+
+
 
 export default defineConfig({
   e2e: {
     supportFile: false,
-    baseUrl: 'http://localhost:5173'
+    specPattern: "**/*.feature",
+    baseUrl: 'http://localhost:5173',
+    async setupNodeEvents(on, config) {
+      await addCucumberPreprocessorPlugin(on, config);
+      on("file:preprocessor", createBundler({
+        plugins: [createEsbuildPlugin.default(config)],
+      }));
+      return config;
+    }
   },
 });
